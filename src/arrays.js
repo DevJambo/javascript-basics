@@ -21,43 +21,73 @@ const addToArray2 = (element, array) => {
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.map(number => {
+    return number.toString();
+  });
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => {
+    return string.toUpperCase();
+  });
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => {
+    const letters = string.split('');
+    letters.reverse();
+    return letters.join('');
+  });
 };
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(number => {
+    return number % 2 === 0;
+  });
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  const newArray = [...array];
+  newArray.splice(index, 1);
+  return newArray;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  const result = strings.filter(string => {
+    let containsVowels = false;
+    vowels.forEach(vowel => {
+      if (string[0] === vowel) {
+        containsVowels = true;
+      }
+    });
+    return containsVowels;
+  });
+  return result;
 };
 
 const removeSpaces = string => {
-  // your code here
+  const letters = string.split(' ');
+  return letters.join('');
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  return numbers.reduce((previous, current) => {
+    return previous + current;
+  }, 0);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  return strings.sort((previous, current) => {
+    return (
+      previous.charCodeAt(previous.length - 1) -
+      current.charCodeAt(current.length - 1)
+    );
+  });
 };
 
 module.exports = {
